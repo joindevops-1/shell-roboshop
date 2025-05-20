@@ -53,8 +53,15 @@ systemctl start shipping
 
 
 dnf install mysql -y 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/db/schema.sql
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/db/app-user.sql
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/db/master-data.sql
+mysql -h mysql.daws84s.site -uroot -pRoboShop@1 -e 'use cities'
 
+if [ $? -ne 0 ]
+    mysql -h mysql.daws84s.site -uroot -pRoboShop@1 < /app/db/schema.sql
+    mysql -h mysql.daws84s.site -uroot -pRoboShop@1 < /app/db/app-user.sql
+    mysql -h mysql.daws84s.site -uroot -pRoboShop@1 < /app/db/master-data.sql
+else
+    echo -e "Shipping data is already loaded... $Y SKIPPING $N"
+fi
 systemctl restart shipping
+
+
