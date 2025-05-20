@@ -4,4 +4,4 @@ Greeting="Good Morning"
 echo "=== SCRIPT-1 ====="
 echo "$Greeting"
 
-./script2.sh
+source script2.sh
