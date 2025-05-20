@@ -2,7 +2,7 @@
 Description=Payment Service
 
 [Service]
-User=roboshop
+User=root
 WorkingDirectory=/app
 // highlight-start
 Environment=PATH=/usr/local/bin:/usr/bin:/bin
