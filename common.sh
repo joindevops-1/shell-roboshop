@@ -71,11 +71,11 @@ setup_app(){
 }
 
 systemd_setup(){
-    cp $SCRIPT_DIR/$app_nam.service /etc/systemd/system/$app_nam.service
-    VALIDATE $? "Copying $app_nam service"
+    cp $SCRIPT_DIR/$app_name.service /etc/systemd/system/$app_name.service
+    VALIDATE $? "Copying $app_name service"
 
     systemctl daemon-reload &>>$LOG_FILE
-    systemctl enable $app_nam  &>>$LOG_FILE
-    systemctl start $app_nam
-    VALIDATE $? "Starting $app_nam"
+    systemctl enable $app_name  &>>$LOG_FILE
+    systemctl start $app_name
+    VALIDATE $? "Starting $app_name"
 }
