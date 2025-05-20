@@ -52,6 +52,8 @@ rm -rf /app/*
 cd /app 
 unzip /tmp/payment.zip &>>$LOG_FILE
 VALIDATE $? "Downloaded payment app"
+pip3 install -r requirements.txt
+
 
 cp $SCRIPT_DIR/payment.service /etc/systemd/system/payment.service
 systemctl daemon-reload  &>>$LOG_FILE
