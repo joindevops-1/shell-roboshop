@@ -2,9 +2,10 @@
 Description=Payment Service
 
 [Service]
-User=root
+User=roboshop
 WorkingDirectory=/app
 // highlight-start
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
 Environment=CART_HOST=cart.daws84s.site
 Environment=CART_PORT=8080
 Environment=USER_HOST=user.daws84s.site
