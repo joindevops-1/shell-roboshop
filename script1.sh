@@ -5,4 +5,4 @@ echo "=== SCRIPT-1 ====="
 echo "$Greeting"
 echo "PID of the script: $$"
 
-source ./script2.sh
+./script2.sh
