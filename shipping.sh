@@ -1,7 +1,7 @@
 #!/bin/bash
 
 source ./common.sh
-app_name=cart
+app_name=shipping
 
 check_root
 setup_app
