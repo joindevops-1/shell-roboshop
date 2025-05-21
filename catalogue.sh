@@ -1,6 +1,5 @@
 #!/bin/bash
 
-START_TIME=$(date +%s)
 source ./common.sh
 app_name=catalogue
 
@@ -22,6 +21,4 @@ else
     echo -e "Data is already loaded ... $Y SKIPPING $N"
 fi
 
-END_TIME=$(date +%s)
-ELAPSED_TIME=$((END_TIME - START_TIME))
-echo -e "Script Exectution $G SUCCESS $N, Time taken: $G $ELAPSED_TIME seconds $N"
+print_time
