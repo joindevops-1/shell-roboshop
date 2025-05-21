@@ -58,6 +58,12 @@ setup_maven(){
     VALIDATE $? "Renaming and Moving $app_name"
 }
 
+setup_python(){
+    dnf install python3 gcc python3-devel -y &>>$LOG_FILE
+    VALIDATE $? "Installing Python3 packages"
+    pip3 install -r requirements.txt
+    VALIDATE $? "Dependencies are installed"
+}
 setup_app(){
     id roboshop
     if [ $? -ne 0 ]
