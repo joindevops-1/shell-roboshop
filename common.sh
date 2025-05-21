@@ -81,6 +81,8 @@ systemd_setup(){
     VALIDATE $? "Starting $app_name"
 }
 
-END_TIME=$(date +%s)
-ELAPSED_TIME=$((END_TIME - START_TIME))
-echo -e "Script Exectution $G SUCCESS $N, Time taken: $G $ELAPSED_TIME seconds $N"
+print_time(){
+    END_TIME=$(date +%s)
+    ELAPSED_TIME=$((END_TIME - START_TIME))
+    echo -e "Script Exectution $G SUCCESS $N, Time taken: $G $ELAPSED_TIME seconds $N"
+}

@@ -18,3 +18,4 @@ systemctl enable redis
 systemctl start redis 
 VALIDATE $? "Enabled and Started Redis"
 
+print_time
