@@ -49,6 +49,15 @@ setup_nodejs(){
     VALIDATE $? "Installing Dependencies"
 }
 
+setup_maven(){
+    dnf install maven -y
+    VALIDATE $? "Installing Maven"
+    mvn clean package 
+    VALIDATE $? "Packaging app"
+    mv target/$app_name-1.0.jar $app_name.jar
+    VALIDATE $? "Renaming and Moving $app_name"
+}
+
 setup_app(){
     id roboshop
     if [ $? -ne 0 ]
